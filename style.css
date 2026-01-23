@@ -1,0 +1,95 @@
+/* Custom styles for TeacherComm homepage */
+
+:root {
+    --primary-blue: #004085;
+    --warning-yellow: #ffb300;
+    --light-bg: #f8f9fa;
+    --dark-text: #212529;
+    --white: #ffffff;
+}
+
+.bg-gradient-blue {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #0056b3 100%);
+}
+
+.text-primary {
+    color: var(--primary-blue) !important;
+}
+
+.btn-warning {
+    background-color: var(--warning-yellow);
+    border-color: var(--warning-yellow);
+    color: var(--dark-text);
+}
+
+.btn-warning:hover {
+    background-color: #ff8f00;
+    border-color: #ff8f00;
+    color: var(--dark-text);
+}
+
+.btn {
+    border-radius: 0 !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--warning-yellow) !important;
+}
+
+.navbar-nav .nav-link {
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-blue) !important;
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+.display-1 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .display-1 {
+        font-size: 3rem;
+    }
+}
+
+.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-blue) !important;
+}
+
+.bg-warning {
+    background-color: var(--warning-yellow) !important;
+}
+
+.bg-light {
+    background-color: var(--light-bg) !important;
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+.text-dark {
+    color: var(--dark-text) !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.vh-100 {
+    height: 100vh !important;
+}
