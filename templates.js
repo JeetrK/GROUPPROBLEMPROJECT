@@ -57,8 +57,8 @@ function displaySearchResults(results) {
         return;
     }
 
-    searchResults.innerHTML = results.map(template => `
-        <div class="search-result-item">
+    searchResults.innerHTML = results.map((template, index) => `
+        <div class="search-result-item" data-template-id="${template.id}" style="animation: fadeInUp 0.4s ease-out ${index * 0.1}s both;">
             <h6>${template.title}</h6>
             <p>${template.description}</p>
             <span class="badge bg-primary">${template.category}</span>
@@ -126,5 +126,21 @@ searchInput.addEventListener('focus', () => {
         });
         
         displaySearchResults(results);
+    }
+});
+
+// Handle clicking on search results
+document.addEventListener('click', (e) => {
+    const resultItem = e.target.closest('.search-result-item');
+    if (resultItem && resultItem.dataset.templateId) {
+        const templateId = parseInt(resultItem.dataset.templateId);
+        const selectedTemplate = templates.find(template => template.id === templateId);
+        
+        if (selectedTemplate) {
+            // Store the selected template in localStorage to pass to the detail page
+            localStorage.setItem('selectedTemplate', JSON.stringify(selectedTemplate));
+            // Navigate to the template detail page
+            window.location.href = 'template-detail.html';
+        }
     }
 });

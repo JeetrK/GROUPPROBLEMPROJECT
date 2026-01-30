@@ -11,3 +11,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Add entrance animations on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Add loading state
+    document.body.classList.add('loading');
+    
+    // Remove loading state after animations
+    setTimeout(() => {
+        document.body.classList.remove('loading');
+    }, 800);
+
+    // Add hover animations to buttons
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((button, index) => {
+        button.style.animationDelay = `${0.4 + index * 0.1}s`;
+    });
+});
