@@ -41,6 +41,7 @@ const templates = [
 // Search functionality
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
+const searchWrapper = document.querySelector('.search-wrapper');
 
 function displaySearchResults(results) {
     if (results.length === 0 && searchInput.value.length > 0) {
@@ -144,3 +145,4 @@ document.addEventListener('click', (e) => {
         }
     }
 });
+

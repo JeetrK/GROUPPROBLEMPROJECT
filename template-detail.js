@@ -149,6 +149,19 @@ document.addEventListener('DOMContentLoaded', () => {
             mounted() {
                 // Make placeholders editable
                 this.content = this.makeEditable(this.content);
+                
+                // Add focus event listeners to clear placeholder text
+                this.$nextTick(() => {
+                    const editablePlaceholders = this.$el.querySelectorAll('.editable-placeholder');
+                    editablePlaceholders.forEach(span => {
+                        span.addEventListener('focus', () => {
+                            // If the span still contains placeholder text in brackets, clear it
+                            if (span.textContent.match(/^\[.*\]$/)) {
+                                span.textContent = '';
+                            }
+                        });
+                    });
+                });
             },
             template: `
                 <div class="template-content">
