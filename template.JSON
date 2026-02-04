@@ -1,64 +1,187 @@
 {
-  "email_templates": [
+  "templates": [
     {
       "id": 1,
-      "scenario": "Requesting an extension",
-      "subject": "Request for Extension on [Assignment Name]",
-      "body": "Dear [Teacher’s Name],\n\nI hope you’re doing well. I’m writing to ask if it would be possible to receive a short extension on the [assignment name], which is currently due on [original due date].\n\nDue to [brief reason—illness, family issue, workload, etc.], I’ve been struggling to complete the assignment to the best of my ability. I understand deadlines are important, and I completely respect your policies.\n\nIf an extension is possible, I would really appreciate it. Thank you for your time and consideration.\n\nBest regards,"
+      "title": "Request to Meet with Teacher",
+      "category": "meeting",
+      "description": "Schedule a meeting with my teacher to discuss my progress or concerns.",
+      "subject": "Request to Meet with You",
+      "body": "Dear [Teacher's Name],\n\nI would like to schedule a meeting with you to discuss my progress in class and address some concerns I have.\n\nWould you have any time available in the coming week? I'm flexible with my schedule and can work around your availability.\n\nThank you for your time.\n\nBest regards,\n[Your Name]"
     },
+    {
+      "id": 2,
+      "title": "Ask for Academic Help",
+      "category": "academic",
+      "description": "Request tutoring, extra help, or clarification on course material for myself.",
+      "subject": "Request for Academic Support",
+      "body": "Dear [Teacher's Name],\n\nI'm reaching out because I'm struggling with some of the material in class and would appreciate some extra help or tutoring.\n\nWould it be possible to schedule a time to go over [specific topic]? I'm committed to improving my understanding and performance.\n\nThank you for your support.\n\nBest,\n[Your Name]"
+    },
+    {
+      "id": 3,
+      "title": "Thank a Teacher",
+      "category": "feedback",
+      "description": "Express my appreciation for a teacher's support or instruction.",
+      "subject": "Thank You",
+      "body": "Dear [Teacher's Name],\n\nI wanted to take a moment to thank you for your excellent teaching and support in class. Your explanations have really helped me understand the material better.\n\nI genuinely appreciate the time and effort you put into helping your students succeed.\n\nThank you again.\n\nBest regards,\n[Your Name]"
+    },
+    {
+      "id": 4,
+      "title": "Report School Absence",
+      "category": "attendance",
+      "description": "Formally notify my teacher about an absence from class.",
+      "subject": "Absence Notification",
+      "body": "Dear [Teacher's Name],\n\nI'm writing to notify you that I was absent from class on [date] due to [reason]. I apologize for missing the lesson.\n\nCould you let me know what I missed and if there's any work I need to make up? I'm committed to staying on top of my studies.\n\nThank you for your understanding.\n\nBest,\n[Your Name]"
+    },
+    {
+      "id": 5,
+      "title": "Question About My Grade",
+      "category": "academic",
+      "description": "Inquire about my grade and ask for feedback on my performance.",
+      "subject": "Question About My Grade",
+      "body": "Dear [Teacher's Name],\n\nI received my grade on the [assignment/test name] and was hoping to better understand where I lost points. I'd like to learn from my mistakes and improve going forward.\n\nWould you have time to review my work with me?\n\nThank you,\n[Your Name]"
+    },
+    {
+      "id": 6,
+      "title": "Join a Club or Activity",
+      "category": "activities",
+      "description": "Express my interest in participating in clubs or school activities.",
+      "subject": "Joining a Club/Activity",
+      "body": "Dear [Teacher/Advisor Name],\n\nI am interested in joining [club/activity name] and would like more information about how to get involved.\n\nCould you provide details about meeting times, requirements, and what I need to do to join?\n\nThank you,\n[Your Name]"
+    },
+    {
+      "id": 7,
+      "title": "Get Help with Homework",
+      "category": "academic",
+      "description": "Ask for guidance, clarification, or resources to complete my homework.",
+      "subject": "Homework Help Request",
+      "body": "Dear [Teacher's Name],\n\nI'm working on the [assignment name] and am having trouble with [specific part]. I've tried to work through it but am still stuck.\n\nCould you provide some guidance or point me toward helpful resources?\n\nThank you for your help.\n\nBest,\n[Your Name]"
+    },
+    {
+      "id": 8,
+      "title": "Discuss My Behavior Concerns",
+      "category": "behavior",
+      "description": "Address or explain my behavioral issues in class or school.",
+      "subject": "Regarding My Recent Behavior",
+      "body": "Dear [Teacher's Name],\n\nI wanted to address my recent behavior in class. I realize I haven't been making the best choices and I accept responsibility for my actions.\n\nI'm committed to improving my behavior going forward and would appreciate any suggestions you might have to help me succeed.\n\nThank you for your patience.\n\nBest,\n[Your Name]"
+    },
+    {
+      "id": 9,
+      "title": "Field Trip Participation",
+      "category": "activities",
+      "description": "Confirm my participation or ask questions about upcoming field trips.",
+      "subject": "Field Trip Question",
+      "body": "Dear [Teacher's Name],\n\nI am interested in attending the upcoming field trip to [location]. Could you provide more details about the date, time, cost, and what I should bring?\n\nI'm excited about this opportunity and would like to make sure I have all the information I need.\n\nThank you,\n[Your Name]"
+    },
+    {
+      "id": 10,
+      "title": "Request Learning Accommodations",
+      "category": "academic",
+      "description": "Request special accommodations or support for my learning needs.",
+      "subject": "Request for Learning Accommodations",
+      "body": "Dear [Teacher's Name],\n\nI would like to discuss potential accommodations that might help me succeed in your class. I have [specific learning need] and believe that [specific accommodation] would help me perform better.\n\nWould you be available to discuss this further?\n\nThank you,\n[Your Name]"
+    },
+    {
+      "id": 11,
+      "title": "Request Uniform Exception",
+      "category": "administrative",
+      "description": "Request an exception or modification to the school uniform policy for myself.",
+      "subject": "Uniform Policy Exception Request",
+      "body": "Dear [Administrator Name],\n\nI am requesting an exception to the uniform policy for [specific reason]. I understand the importance of student dress code and this request is for [specific circumstance].\n\nCould you let me know if this is something that can be accommodated?\n\nThank you for considering my request.\n\nBest,\n[Your Name]"
+    },
+    {
+      "id": 12,
+      "title": "Request Class Schedule Change",
+      "category": "administrative",
+      "description": "Ask to change my class schedule or course selection.",
+      "subject": "Request for Schedule Change",
+      "body": "Dear [Counselor/Administrator Name],\n\nI am writing to request a change to my class schedule. I would like to [change from X to Y class, adjust my times, etc.] because [reason].\n\nCould we discuss the possibility of making this change? I believe it would help me succeed academically.\n\nThank you,\n[Your Name]"
+    },
+    {
+      "id": 13,
+      "title": "Report Bullying or Harassment",
+      "category": "safety",
+      "description": "Report incidents of bullying or harassment affecting me.",
+      "subject": "Serious Concern - Bullying/Harassment Report",
+      "body": "Dear [Teacher/Counselor Name],\n\nI am writing to report an incident of bullying/harassment that has been affecting me. [Describe the incident, when it happened, and who was involved].\n\nThis situation is impacting my ability to focus on school, and I would appreciate your help in addressing it.\n\nThank you for your attention to this serious matter.\n\nBest,\n[Your Name]"
+    },
+    {
+      "id": 14,
+      "title": "Request Early Dismissal",
+      "category": "attendance",
+      "description": "Request permission to leave school early for myself.",
+      "subject": "Early Dismissal Request",
+      "body": "Dear [Teacher/Administrator Name],\n\nI am requesting permission to be dismissed early from school on [date] for [reason]. I understand this may require approval and am happy to provide any necessary documentation.\n\nPlease let me know if this request can be accommodated.\n\nThank you,\n[Your Name]"
+    },
+    {
+      "id": 15,
+      "title": "Explore Athletic Opportunities",
+      "category": "activities",
+      "description": "Ask about sports teams, tryouts, and athletic programs I can join.",
+      "subject": "Athletic Program Interest",
+      "body": "Dear [Coach/Athletic Director Name],\n\nI am interested in joining the [sport name] team. Could you provide information about tryout dates, requirements, practice schedules, and what I need to do to join?\n\nI am enthusiastic about participating and would appreciate any guidance.\n\nThank you,\n[Your Name]"
+    },
+    {
+      "id": 16,
+      "title": "Share Class Feedback",
+      "category": "academic",
+      "description": "Provide feedback on curriculum, teaching methods, or course content.",
+      "subject": "Course Feedback",
+      "body": "Dear [Teacher's Name],\n\nI wanted to share some feedback about the class that I believe could be helpful. [Specific feedback about what's working well or what could be improved].\n\nI appreciate your openness to student input and hope this perspective is useful.\n\nThank you,\n[Your Name]"
+    }
+  ]
     {
       "id": 2,
       "scenario": "Apologizing for missing a deadline",
       "subject": "Apology for Late Submission",
-      "body": "Dear [Teacher’s Name],\n\nI’m writing to apologize for submitting the [assignment name] late. I take responsibility for missing the deadline and understand any consequences that may come with it.\n\nI appreciate the time and effort you put into the class, and I’ll make sure to manage my time better going forward. Thank you for your understanding.\n\nSincerely,"
+      "body": "Dear [Teacher’s Name],\n\nI wanted to apologize for submitting the [assignment name] late. I understand that it was my responsibility to meet the deadline and I take full responsibility for missing it.\n\nI appreciate the effort you put into the class, and I will work on managing my time better in the future. Thank you for your understanding.\n\nSincerely,\n[Your Name]"
     },
     {
       "id": 3,
       "scenario": "Asking for help or clarification",
       "subject": "Question About [Topic or Assignment]",
-      "body": "Dear [Teacher’s Name],\n\nI hope you’re having a good day. I’m reaching out because I’m having some trouble understanding [specific topic or assignment].\n\nIf you have any advice, resources, or time to clarify this, I’d really appreciate it. I want to make sure I fully understand the material.\n\nThank you for your help,"
+      "body": "Dear [Teacher’s Name],\n\nI’m reaching out because I’m having trouble understanding [specific topic or assignment]. I want to make sure I fully understand the material before moving forward.\n\nIf you have any advice, resources, or time to clarify this, I would really appreciate it. Thank you for your help.\n\nBest,\n[Your Name]"
     },
     {
       "id": 4,
       "scenario": "Notifying about an absence",
       "subject": "Absence on [Date]",
-      "body": "Dear [Teacher’s Name],\n\nI wanted to let you know that I was unable to attend class on [date] due to [brief reason]. I apologize for missing the lesson.\n\nPlease let me know if there’s anything important I should review or make up. Thank you for your understanding.\n\nBest,"
+      "body": "Dear [Teacher’s Name],\n\nI wanted to let you know that I was unable to attend class on [date] due to [brief reason]. I apologize for missing the lesson.\n\nPlease let me know if there is anything important I should review or make up. Thank you for your understanding.\n\nBest,\n[Your Name]"
     },
     {
       "id": 5,
       "scenario": "Asking about a grade",
-      "subject": "Question Regarding My Grade on [Assignment]",
-      "body": "Dear [Teacher’s Name],\n\nI hope you’re doing well. I had a question about my grade on the [assignment or test name]. I wanted to better understand where I lost points so I can improve in the future.\n\nI appreciate your time and feedback. Thank you for helping me learn from this.\n\nSincerely,"
+      "subject": "Question About My Grade on [Assignment Name]",
+      "body": "Dear [Teacher’s Name],\n\nI had a question regarding my grade on the [assignment or test name]. I was hoping you could help me understand where I lost points so I can improve in the future.\n\nThank you for your time and feedback. I appreciate your help.\n\nSincerely,\n[Your Name]"
     },
     {
       "id": 6,
       "scenario": "Requesting a recommendation letter",
       "subject": "Request for Letter of Recommendation",
-      "body": "Dear [Teacher’s Name],\n\nI hope you’re doing well. I was wondering if you would be willing to write me a letter of recommendation for [college, scholarship, job, etc.].\n\nI understand this is a big request, and I completely understand if you’re unable to. If you’re willing, I’d be happy to provide any additional information you need.\n\nThank you for your time and consideration,"
+      "body": "Dear [Teacher’s Name],\n\nI was wondering if you would be willing to write me a letter of recommendation for [college, scholarship, job, etc.]. I really enjoyed your class and feel that you know my work well.\n\nI understand this is a significant request, so I completely understand if you’re unable to. If you’re willing, I can provide any information you might need.\n\nThank you for your time and consideration.\n\nSincerely,\n[Your Name]"
     },
     {
       "id": 7,
       "scenario": "Thanking a teacher",
       "subject": "Thank You",
-      "body": "Dear [Teacher’s Name],\n\nI just wanted to take a moment to thank you for your help and support in class. I really appreciate the effort you put into teaching and helping students succeed.\n\nYour class has been very helpful and meaningful to me. Thank you again.\n\nBest regards,"
+      "body": "Dear [Teacher’s Name],\n\nI just wanted to thank you for your help and support in class. I really appreciate the effort you put into teaching and helping students succeed.\n\nYour class has been meaningful to me, and I’ve learned a lot. Thank you again.\n\nBest regards,\n[Your Name]"
     },
     {
       "id": 8,
       "scenario": "Requesting make-up work or a test",
       "subject": "Make-Up Work Request",
-      "body": "Dear [Teacher’s Name],\n\nI’m writing to ask if it would be possible for me to make up the [assignment/test] I missed on [date].\n\nI understand your policies and am willing to follow whatever process you prefer. Thank you for your time and consideration.\n\nSincerely,"
+      "body": "Dear [Teacher’s Name],\n\nI’m writing to ask if it would be possible to make up the [assignment/test] that I missed on [date].\n\nI understand your policies and am willing to follow whatever process you prefer. Thank you for your time.\n\nSincerely,\n[Your Name]"
     },
     {
       "id": 9,
       "scenario": "Explaining a personal situation",
-      "subject": "Regarding Recent Class Performance",
-      "body": "Dear [Teacher’s Name],\n\nI wanted to reach out and let you know that I’ve been dealing with a personal situation that has affected my recent schoolwork.\n\nI’m doing my best to get back on track and wanted to keep you informed. Thank you for your understanding and support.\n\nBest,"
+      "subject": "Regarding My Recent Class Performance",
+      "body": "Dear [Teacher’s Name],\n\nI wanted to let you know that I’ve been dealing with a personal situation that has affected my recent schoolwork.\n\nI’m working on getting back on track and wanted to communicate with you. Thank you for your understanding.\n\nBest,\n[Your Name]"
     },
     {
       "id": 10,
       "scenario": "Asking for extra credit or grade improvement",
-      "subject": "Question About Opportunities to Improve My Grade",
-      "body": "Dear [Teacher’s Name],\n\nI hope you’re doing well. I wanted to ask if there are any opportunities for extra credit or ways I could improve my grade in the class.\n\nI’m motivated to put in the work and would appreciate any guidance you can offer. Thank you for your time.\n\nSincerely,"
+      "subject": "Question About Improving My Grade",
+      "body": "Dear [Teacher’s Name],\n\nI wanted to ask if there are any opportunities to improve my grade in the class, such as extra credit or additional assignments.\n\nI’m willing to put in the effort and would appreciate any guidance you can offer. Thank you for your time.\n\nSincerely,\n[Your Name]"
     }
   ]
 }

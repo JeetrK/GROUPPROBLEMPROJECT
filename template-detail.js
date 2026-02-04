@@ -10,61 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedTemplate = JSON.parse(localStorage.getItem('selectedTemplate'));
 
     if (selectedTemplate) {
-        // Generate template content based on category
+        // Use subject and body from the JSON template
         let templateContent = '';
-        switch(selectedTemplate.category) {
-            case 'meeting':
-                templateContent = `
-                    <p>Dear [Teacher's Name],</p>
-                    <p>I hope this email finds you well. I am writing to request a meeting to discuss my child's academic progress and future goals. I believe that regular communication between parents and teachers is essential for student success.</p>
-                    <p>I would appreciate the opportunity to meet with you at your earliest convenience to discuss [specific topics or concerns]. Please let me know what times work best for you during the upcoming week.</p>
-                    <p>Thank you for your dedication to my child's education. I look forward to hearing from you soon.</p>
-                    <p>Best regards,<br>[Your Name]<br>[Your Contact Information]</p>
-                `;
-                break;
-            case 'academic':
-                templateContent = `
-                    <p>Dear [Teacher's Name],</p>
-                    <p>I hope you are doing well. I am writing to discuss some concerns I have regarding my child's academic performance in your class. I want to ensure that [he/she/they] receives the support needed to succeed.</p>
-                    <p>Recently, I have noticed [specific academic issues or grades]. I would like to understand what steps we can take to help improve [his/her/their] performance and ensure [he/she/they] stays on track.</p>
-                    <p>I am committed to supporting my child's education and would appreciate any guidance you can provide. Please let me know if there are any specific actions I can take at home to help reinforce the classroom learning.</p>
-                    <p>Thank you for your attention to this matter. I look forward to your response and working together to support my child's academic growth.</p>
-                    <p>Best regards,<br>[Your Name]<br>[Your Contact Information]</p>
-                `;
-                break;
-            case 'feedback':
-                templateContent = `
-                    <p>Dear [Teacher's Name],</p>
-                    <p>I wanted to take a moment to express my sincere appreciation for your dedication and the positive impact you have had on my child's education this year. Your commitment to creating an engaging learning environment has not gone unnoticed.</p>
-                    <p>[He/She/They] frequently comes home excited about the lessons and activities in your class. Your ability to make learning both challenging and enjoyable has made a significant difference in [his/her/their] attitude toward school.</p>
-                    <p>Thank you for going above and beyond to ensure that every student feels valued and supported. Your passion for teaching is truly inspiring, and I am grateful that my child has you as a teacher.</p>
-                    <p>Best regards,<br>[Your Name]<br>[Your Contact Information]</p>
-                `;
-                break;
-            case 'attendance':
-                templateContent = `
-                    <p>Dear [Teacher's Name],</p>
-                    <p>I am writing to inform you that my child, [Child's Name], will be absent from school on [date(s)] due to [brief reason for absence].</p>
-                    <p>[He/She/They] will return to school on [return date]. If there are any assignments or important information that needs to be communicated during this time, please let me know how I can best support [his/her/their] continued learning.</p>
-                    <p>Thank you for your understanding. I apologize for any inconvenience this may cause and appreciate your continued support of my child's education.</p>
-                    <p>Best regards,<br>[Your Name]<br>[Your Contact Information]</p>
-                `;
-                break;
-            case 'activities':
-                templateContent = `
-                    <p>Dear [Teacher's Name],</p>
-                    <p>I hope this email finds you well. I am writing to express my child's interest in participating in [specific extracurricular activity or club]. [He/She/They] has mentioned how much [he/she/they] enjoys [related subject/activity] and believes this would be a great opportunity to further develop [his/her/their] skills.</p>
-                    <p>Could you please provide information about the requirements, time commitment, and any necessary forms or applications for joining? I would also appreciate any insights into what students can expect to gain from participating in this activity.</p>
-                    <p>Thank you for offering these valuable opportunities for student growth. I look forward to your response and supporting my child's participation.</p>
-                    <p>Best regards,<br>[Your Name]<br>[Your Contact Information]</p>
-                `;
-                break;
-            default:
-                templateContent = `
-                    <p>Dear [Teacher's Name],</p>
-                    <p>[Template content would be customized based on the specific communication needs.]</p>
-                    <p>Best regards,<br>[Your Name]<br>[Your Contact Information]</p>
-                `;
+        
+        if (selectedTemplate.subject && selectedTemplate.body) {
+            // Format the email template with subject as header
+            templateContent = `
+                <p><strong>Subject: ${selectedTemplate.subject}</strong></p>
+                <hr>
+                ${selectedTemplate.body.split('\n\n').map(para => `<p>${para}</p>`).join('')}
+            `;
+        } else {
+            // Fallback for templates without subject/body (shouldn't happen with new JSON)
+            templateContent = `
+                <p>Dear [Teacher's Name],</p>
+                <p>[Template content]</p>
+                <p>Best regards,<br>[Your Name]</p>
+            `;
         }
 
         // Create Vue app for interactive template editing
