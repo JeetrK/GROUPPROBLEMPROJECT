@@ -15,7 +15,20 @@ function rotateBackgroundImages() {
     const bgImages = document.querySelectorAll('.bg-img');
     bgImages.forEach((img, index) => {
         const imageIndex = (currentImageIndex + index) % allImages.length;
+        // swap source
         img.src = `imgs/${allImages[imageIndex]}`;
+
+        // slight random positional shift and subtle rotation/scale for organic motion
+        const dx = (Math.random() - 0.5) * 40; // -20..20 px
+        const dy = (Math.random() - 0.5) * 40; // -20..20 px
+        const angle = (Math.random() - 0.5) * 6; // -3..3 deg
+        const scale = 1 + (Math.random() - 0.5) * 0.1; // 0.95..1.05
+
+        // vary opacity a bit for depth
+        const opacity = 0.35 + Math.random() * 0.3; // 0.35..0.65
+
+        img.style.transform = `translate(${dx}px, ${dy}px) rotate(${angle}deg) scale(${scale})`;
+        img.style.opacity = opacity;
     });
     currentImageIndex = (currentImageIndex + 1) % allImages.length;
 }
@@ -24,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial rotation
     rotateBackgroundImages();
     
-    // Rotate images every 3 seconds
-    setInterval(rotateBackgroundImages, 3000);
+    // Rotate images every 5 seconds (slower)
+    setInterval(rotateBackgroundImages, 5000);
 });
 
 // Smooth scrolling for navbar links
