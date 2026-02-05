@@ -3,14 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Righteous&display=swap');
 
 :root {
-    --primary-blue: #0a3d7d;
-    --accent-blue: #0056d9;
+    --primary-blue: #7d1f3d;
+    --accent-blue: #a82e5e;
     --warning-yellow: #ff9500;
-    --light-bg: #f0f5fa;
+    --light-bg: #f9f0f3;
     --dark-text: #1a1f2e;
     --white: #ffffff;
-    --shadow-lg: 0 20px 40px rgba(10, 61, 125, 0.15);
-    --shadow-md: 0 10px 25px rgba(10, 61, 125, 0.1);
+    --shadow-lg: 0 20px 40px rgba(125, 31, 61, 0.15);
+    --shadow-md: 0 10px 25px rgba(125, 31, 61, 0.1);
     --silly-font: 'Fredoka One', cursive;
 }
 
@@ -244,7 +244,7 @@ h1, h2, h3 {
 }
 
 .bg-gradient-blue {
-    background: linear-gradient(135deg, #0a3d7d 0%, #0056d9 50%, #0073f0 100%);
+    background: linear-gradient(135deg, #7d1f3d 0%, #a82e5e 50%, #c9567d 100%);
     position: relative;
 }
 
@@ -255,7 +255,7 @@ h1, h2, h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(0, 115, 240, 0.1), transparent 70%);
+    background: radial-gradient(circle at top right, rgba(201, 86, 125, 0.1), transparent 70%);
     pointer-events: none;
 }
 
@@ -404,10 +404,11 @@ h1, h2, h3 {
 }
 
 .search-result-item h6 {
-    color: #0a3d7d;
+    color: #7d1f3d;
     margin: 0 0 5px 0;
     font-weight: 700;
     font-size: 0.98rem;
+    font-family: var(--silly-font);
 }
 
 .search-result-item p {
@@ -460,7 +461,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #0a3d7d, #ff9500);
+    background: linear-gradient(90deg, #7d1f3d, #ff9500);
     transform: scaleX(0);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: left;
@@ -469,7 +470,7 @@ h1, h2, h3 {
 .template-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
-    border-color: #0a3d7d;
+    border-color: #7d1f3d;
 }
 
 .template-card:hover::before {
@@ -483,13 +484,14 @@ h1, h2, h3 {
 }
 
 .template-card-title {
-    color: #0a3d7d;
+    color: #7d1f3d;
     margin: 0 0 12px 0;
     font-weight: 700;
     line-height: 1.3;
     flex-grow: 0;
     font-size: 1.15rem;
     letter-spacing: 0.3px;
+    font-family: var(--silly-font);
 }
 
 .template-card-description {
@@ -500,6 +502,8 @@ h1, h2, h3 {
     flex-grow: 1;
     display: flex;
     align-items: center;
+    font-family: var(--silly-font);
+    font-style: italic;
 }
 
 .template-card .badge {
