@@ -68,6 +68,47 @@
     }
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 5px rgba(201, 86, 125, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(201, 86, 125, 0.8); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Apply opening animations */
 .navbar {
     animation: slideInLeft 0.8s ease-out;
@@ -78,13 +119,20 @@
 }
 
 .hero {
-    animation: fadeInUp 1s ease-out 0.2s both;
+    animation: fadeIn 1s ease-out;
+    background-color: var(--primary-blue);
+    overflow: hidden;
     position: relative;
-    z-index: 1;
 }
 
-.btn {
-    animation: scaleIn 0.6s ease-out 0.4s both;
+.hero h1 {
+    font-family: var(--silly-font);
+    font-size: 3.5rem;
+    animation: fadeInUp 1s ease-out 0.2s both, bounce 2s ease-in-out 1.2s infinite;
+}
+
+.hero .lead {
+    animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .template-content {
@@ -107,6 +155,25 @@
     overflow: hidden;
     font-weight: 600;
     letter-spacing: 0.4px;
+    animation: slideInUp 0.8s ease-out;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .btn:hover {
@@ -125,6 +192,7 @@
     position: relative;
     font-family: var(--silly-font);
     letter-spacing: 1px;
+    animation: slideInLeft 0.8s ease-out, glow 2s ease-in-out infinite;
 }
 
 .navbar-brand:hover {
@@ -163,17 +231,19 @@
 h1, h2, h3 {
     font-family: var(--silly-font);
     letter-spacing: 0.5px;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .display-1, .display-4 {
     font-family: var(--silly-font);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite;
 }
 
 .hero h1 {
     font-family: var(--silly-font);
     font-size: 3.5rem;
-    animation: bounce 1s ease-in-out infinite;
+    animation: fadeInUp 1s ease-out 0.2s both, bounce 2s ease-in-out 1.2s infinite;
 }
 
 @keyframes bounce {
@@ -187,17 +257,20 @@ h1, h2, h3 {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    animation: slideInLeft 0.4s ease-out;
 }
 
 .search-result-item:hover {
     background-color: #f8f9fa;
     transform: translateX(5px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: wiggle 0.3s ease-in-out;
 }
 
 .search-result-item:hover h6 {
     color: var(--primary-blue);
     transform: scale(1.02);
+    animation: float 0.5s ease-in-out;
 }
 
 .template-body {
@@ -214,10 +287,12 @@ h1, h2, h3 {
 #copyButton {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    animation: slideInUp 0.8s ease-out;
 }
 
 #copyButton:hover {
     transform: scale(1.05);
+    animation: spin 0.6s ease-in-out;
 }
 
 #copyButton:active {
@@ -360,6 +435,7 @@ h1, h2, h3 {
     font-size: 1.1rem;
     background: rgba(255, 255, 255, 0.95);
     font-weight: 500;
+    animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .search-bar:focus {
@@ -395,6 +471,7 @@ h1, h2, h3 {
     cursor: pointer;
     transition: all 0.25s ease;
     background: #fafbfc;
+    animation: slideInLeft 0.4s ease-out;
 }
 
 .search-result-item:hover {
@@ -450,8 +527,8 @@ h1, h2, h3 {
     height: 100%;
     position: relative;
     overflow: hidden;
-    /* bring individual cards to front in case other layers overlap */
     z-index: 10002;
+    animation: scaleIn 0.6s ease-out;
 }
 
 .template-card::before {
@@ -492,6 +569,11 @@ h1, h2, h3 {
     font-size: 1.15rem;
     letter-spacing: 0.3px;
     font-family: var(--silly-font);
+    transition: all 0.3s ease;
+}
+
+.template-card:hover .template-card-title {
+    animation: wiggle 0.5s ease-in-out;
 }
 
 .template-card-description {
@@ -504,11 +586,13 @@ h1, h2, h3 {
     align-items: center;
     font-family: var(--silly-font);
     font-style: italic;
+    animation: fadeIn 0.8s ease-out 0.1s both;
 }
 
 .template-card .badge {
     align-self: flex-start;
     margin-top: auto;
+    animation: slideInLeft 0.6s ease-out 0.2s both;
 }
 
 /* Responsive Grid */
