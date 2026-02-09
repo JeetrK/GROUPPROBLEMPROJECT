@@ -1,5 +1,11 @@
 // Load and display the selected template
 document.addEventListener('DOMContentLoaded', () => {
+    // Helper function to get badge class based on category
+    function getCategoryBadgeClass(category) {
+        const categoryLower = category.toLowerCase();
+        return `badge-${categoryLower}`;
+    }
+
     // Add loading animation to body
     document.body.classList.add('loading');
 
@@ -42,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
             computed: {
                 displayContent() {
                     return this.content;
+                },
+                badgeClass() {
+                    return getCategoryBadgeClass(this.template.category);
                 }
             },
             methods: {
@@ -127,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             template: `
                 <div class="template-content">
-                    <span class="badge bg-primary mb-3">{{ template.category }}</span>
+                    <span class="badge" :class="badgeClass" style="margin-bottom: 1rem; display: inline-block;">{{ template.category }}</span>
                     <h1 class="display-4 fw-bold mb-4">{{ template.title }}</h1>
                     <p class="lead mb-4">{{ template.description }}</p>
                     <div class="template-body bg-white text-dark p-4 rounded shadow">

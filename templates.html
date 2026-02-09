@@ -76,6 +76,23 @@
             <section class="py-5 bg-light" id="templatesSection" style="margin-top: 60px;">
                 <div class="container">
                     <h2 class="fw-bold mb-5 text-center text-primary">All Templates</h2>
+                    <!-- Sort Dropdown -->
+                    <div class="mb-4 d-flex justify-content-center">
+                        <div style="max-width: 300px; width: 100%;">
+                            <label for="sortSelect" class="form-label fw-bold">Sort by Category</label>
+                            <select id="sortSelect" class="form-select">
+                                <option value="">All Categories</option>
+                                <option value="academic">Academic</option>
+                                <option value="behavior">Behavior</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="attendance">Attendance</option>
+                                <option value="activities">Activities</option>
+                                <option value="administrative">Administrative</option>
+                                <option value="meeting">Meeting</option>
+                                <option value="safety">Safety</option>
+                            </select>
+                        </div>
+                    </div>
                     <div id="allTemplates" class="templates-grid"></div>
                 </div>
             </section>

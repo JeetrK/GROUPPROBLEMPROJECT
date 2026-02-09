@@ -1,11 +1,18 @@
 // Load templates from JSON file
 let templates = [];
 
+// Helper function to get badge class based on category
+function getCategoryBadgeClass(category) {
+    const categoryLower = category.toLowerCase();
+    return `badge-${categoryLower}`;
+}
+
 // Wait for DOM to be ready and templates to load
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
     const allTemplatesContainer = document.getElementById('allTemplates');
+    const sortSelect = document.getElementById('sortSelect');
 
     // Fetch templates from JSON
     fetch('template.JSON')
@@ -38,22 +45,44 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="search-result-item" data-template-id="${template.id}" style="animation: fadeInUp 0.4s ease-out ${index * 0.1}s both;">
                 <h6>${template.title}</h6>
                 <p>${template.description}</p>
-                <span class="badge bg-primary">${template.category}</span>
+                <span class="badge ${getCategoryBadgeClass(template.category)}">${template.category}</span>
             </div>
         `).join('');
     }
 
-    // Display all templates on page load
-    function displayAllTemplates() {
-        allTemplatesContainer.innerHTML = templates.map((template, index) => `
+    // Display all templates on page load or with category filter
+    function displayAllTemplates(filterCategory = '') {
+        let templatesToDisplay = templates;
+        
+        // Filter by category if selected
+        if (filterCategory) {
+            templatesToDisplay = templates.filter(template => 
+                template.category.toLowerCase() === filterCategory.toLowerCase()
+            );
+        }
+        
+        if (templatesToDisplay.length === 0) {
+            allTemplatesContainer.innerHTML = '<p class="text-center text-muted fs-5">No templates found in this category.</p>';
+            return;
+        }
+        
+        allTemplatesContainer.innerHTML = templatesToDisplay.map((template, index) => `
             <div class="template-card" data-template-id="${template.id}" style="animation: fadeInUp 0.4s ease-out ${index * 0.05}s both;">
                 <div class="template-card-body">
                     <h5 class="template-card-title">${template.title}</h5>
                     <p class="template-card-description">${template.description}</p>
-                    <span class="badge bg-primary">${template.category}</span>
+                    <span class="badge ${getCategoryBadgeClass(template.category)}">${template.category}</span>
                 </div>
             </div>
         `).join('');
+    }
+
+    // Sort dropdown event listener
+    if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+            const selectedCategory = e.target.value;
+            displayAllTemplates(selectedCategory);
+        });
     }
 
     // Search event listener with character-by-character filtering
